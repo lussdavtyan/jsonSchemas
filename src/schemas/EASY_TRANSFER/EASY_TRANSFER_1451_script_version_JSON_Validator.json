@@ -1,0 +1,55 @@
+{
+  "$id": "https://example.com/easy_transfer_1451.schema.json",
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "title": "EASY_TRANSFER",
+  "definitions": {
+    "rate": {
+      "type": "integer",
+      "exclusiveMinimum": 0
+    },
+    "amount": {
+      "$ref": "../amount.json#/properties/amount"
+    },
+    "target": {
+      "$ref": "../target.json#/properties/target"
+    }
+  },
+  "type": "object",
+  "properties": {
+    "purpose": {
+      "type": "string",
+      "description": "The document type(EASY_TRANSFER)"
+    },
+    "beneficiary": {
+      "type": "string",
+      "description": "Beneficiary name of the document",
+      "comment": "e.g. Գազ և գազի սպասարկում"
+    },
+    "debitAmount": {
+      "$ref": "#/definitions/amount"
+    },
+    "debitTarget": {
+      "$ref": "#/definitions/target"
+    },
+    "creditAmount": {
+      "$ref": "#/definitions/amount"
+    },
+    "rate": {
+      "$ref": "#/definitions/rate"
+    },
+    "beneficiaryClientId": {
+      "type": "string",
+      "description": "Unique identifier"
+    }
+  },
+  "required": [
+    "purpose",
+    "beneficiary",
+    "rate",
+    "debitAmount",
+    "debitTarget",
+    "creditAmount",
+    "beneficiaryClientId"
+  ],
+  "additionalProperties": false
+}

@@ -1,0 +1,15 @@
+{
+  "$id": "https://example.com/swift_transfer_6951.schema.json",
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "title": "SWIFT_TRANSFER",
+  "type": "object",
+  "properties": {
+    "feedback": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "feedback"
+  ],
+  "additionalProperties": false
+}

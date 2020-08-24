@@ -1,0 +1,31 @@
+{
+  "$id": "https://example.com/bank_info.schema.json",
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "title": "BANK_INFO_VALIDATION",
+  "type": "object",
+  "properties": {
+    "bankInfo": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "account": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "code",
+        "account",
+        "name"
+      ]
+    }
+  },
+  "required": [
+    "bankInfo"
+  ],
+  "additionalProperties": false
+}

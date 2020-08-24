@@ -1,0 +1,15 @@
+{
+  "$id": "https://example.com/deposit_replenishment_6801.schema.json",
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "title": "DEPOSIT_REPLENISHMENT",
+  "type": "object",
+  "properties": {
+    "feedback": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "feedback"
+  ],
+  "additionalProperties": false
+}

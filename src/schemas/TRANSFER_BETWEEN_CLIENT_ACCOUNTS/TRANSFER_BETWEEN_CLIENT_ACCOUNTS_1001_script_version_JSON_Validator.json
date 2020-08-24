@@ -1,0 +1,65 @@
+{
+  "$id": "https://example.com/transfer_between_client_accounts_1001.schema.json",
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "title": "TRANSFER_BETWEEN_CLIENT_ACCOUNTS",
+  "definitions": {
+    "rate": {
+      "type": "integer",
+      "exclusiveMinimum": 0
+    },
+    "amount": {
+      "$ref": "../amount.json#/properties/amount"
+    },
+    "target": {
+      "$ref": "../target.json#/properties/target"
+    }
+  },
+  "type": "object",
+  "properties": {
+    "purpose": {
+      "type": "string",
+      "description": "The document type(UTILITY_PAYMENT)"
+    },
+    "beneficiary": {
+      "type": "string",
+      "description": "Beneficiary name of the document",
+      "comment": "e.g. Գազ և գազի սպասարկում"
+    },
+    "rate": {
+      "$ref": "#/definitions/rate"
+    },
+    "debitAmount": {
+      "$ref": "#/definitions/amount"
+    },
+    "debitTarget": {
+      "$ref": "#/definitions/target"
+    },
+    "fee": {
+      "$ref": "#/definitions/amount"
+    },
+    "feesTarget": {
+      "$ref": "#/definitions/target"
+    },
+    "creditAmount": {
+      "$ref": "#/definitions/amount"
+    },
+    "creditTarget": {
+      "$ref": "#/definitions/target"
+    },
+    "documentNumber": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "purpose",
+    "beneficiary",
+    "fee",
+    "feesTarget",
+    "rate",
+    "debitTarget",
+    "debitAmount",
+    "creditTarget",
+    "creditAmount"
+  ],
+  "additionalProperties": false
+}

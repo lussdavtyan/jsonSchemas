@@ -1,0 +1,15 @@
+{
+  "$id": "https://example.com/loan_repayment_12401.schema.json",
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "title": "LOAN_REPAYMENT",
+  "type": "object",
+  "properties": {
+    "feedback": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "feedback"
+  ],
+  "additionalProperties": false
+}

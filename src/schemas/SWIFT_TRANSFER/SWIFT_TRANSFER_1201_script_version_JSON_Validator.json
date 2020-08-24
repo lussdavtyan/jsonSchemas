@@ -1,0 +1,58 @@
+{
+  "$id": "https://example.com/swift_transfer_1201.schema.json",
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "title": "SWIFT_TRANSFER",
+  "definitions": {
+    "rate": {
+      "type": "integer",
+      "exclusiveMinimum": 0
+    },
+    "amount": {
+      "$ref": "../amount.json#/properties/amount"
+    },
+    "target": {
+      "$ref": "../target.json#/properties/target"
+    }
+  },
+  "type": "object",
+  "properties": {
+    "purpose": {
+      "type": "string",
+      "description": "The document type(SWIFT_TRANSFER)"
+    },
+    "beneficiary": {
+      "type": "string",
+      "description": "Beneficiary name of the document",
+      "comment": "e.g. Գազ և գազի սպասարկում"
+    },
+    "rate": {
+      "$ref": "#/definitions/rate"
+    },
+    "debitAmount": {
+      "$ref": "#/definitions/amount"
+    },
+    "debitTarget": {
+      "$ref": "#/definitions/target"
+    },
+    "fee": {
+      "$ref": "#/definitions/amount"
+    },
+    "feesTarget": {
+      "$ref": "#/definitions/target"
+    },
+    "creditAmount": {
+      "$ref": "#/definitions/amount"
+    }
+  },
+  "required": [
+    "purpose",
+    "beneficiary",
+    "fee",
+    "feesTarget",
+    "rate",
+    "debitTarget",
+    "debitAmount",
+    "creditAmount"
+  ],
+  "additionalProperties": false
+}

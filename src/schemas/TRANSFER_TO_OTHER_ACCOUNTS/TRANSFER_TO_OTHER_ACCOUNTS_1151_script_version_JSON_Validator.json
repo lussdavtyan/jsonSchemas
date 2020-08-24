@@ -1,0 +1,41 @@
+{
+  "$id": "https://example.com/transfer_to_other_accounts_1151.schema.json",
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "title": "TRANSFER_TO_OTHER_ACCOUNTS",
+  "definitions": {
+    "amount": {
+      "$ref": "../amount.json#/properties/amount"
+    },
+    "target": {
+      "$ref": "../target.json#/properties/target"
+    }
+  },
+  "type": "object",
+  "properties": {
+    "beneficiary": {
+      "type": "string",
+      "description": "Beneficiary name of the document",
+      "comment": "e.g. Գազ և գազի սպասարկում"
+    },
+    "debitAmount": {
+      "$ref": "#/definitions/amount"
+    },
+    "debitTarget": {
+      "$ref": "#/definitions/target"
+    },
+    "creditAmount": {
+      "$ref": "#/definitions/amount"
+    },
+    "creditTarget": {
+      "$ref": "#/definitions/target"
+    }
+  },
+  "required": [
+    "beneficiary",
+    "debitAmount",
+    "debitTarget",
+    "creditAmount",
+    "creditTarget"
+  ],
+  "additionalProperties": false
+}

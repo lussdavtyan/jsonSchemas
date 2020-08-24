@@ -1,0 +1,34 @@
+{
+  "$id": "https://example.com/target.schema.json",
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "title": "TARGET_VALIDATION",
+  "type": "object",
+  "properties": {
+    "target": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for target"
+        },
+        "type": {
+          "type": "string",
+          "description": "Type of the target",
+          "comment": "e.g. ACCOUNT, type may be enum"
+        },
+        "number": {
+          "type": "string",
+          "description": "Number of the target"
+        },
+        "text": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "type"
+      ]
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,46 @@
+{
+  "$id": "https://example.com/transfer_between_client_accounts_1051.schema.json",
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "title": "TRANSFER_BETWEEN_CLIENT_ACCOUNTS",
+  "definitions": {
+    "amount": {
+      "$ref": "../amount.json#/properties/amount"
+    },
+    "target": {
+      "$ref": "../target.json#/properties/target"
+    }
+  },
+  "type": "object",
+  "properties": {
+    "purpose": {
+      "type": "string",
+      "description": "The document type(TRANSFER_BETWEEN_CLIENT_ACCOUNTS)"
+    },
+    "beneficiary": {
+      "type": "string",
+      "description": "Beneficiary name of the document",
+      "comment": "e.g. Գազ և գազի սպասարկում"
+    },
+    "debitAmount": {
+      "$ref": "#/definitions/amount"
+    },
+    "debitTarget": {
+      "$ref": "#/definitions/target"
+    },
+    "creditAmount": {
+      "$ref": "#/definitions/amount"
+    },
+    "creditTarget": {
+      "$ref": "#/definitions/target"
+    }
+  },
+  "required": [
+    "purpose",
+    "beneficiary",
+    "debitAmount",
+    "debitTarget",
+    "creditAmount",
+    "creditTarget"
+  ],
+  "additionalProperties": false
+}

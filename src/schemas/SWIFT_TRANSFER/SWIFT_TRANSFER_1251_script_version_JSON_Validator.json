@@ -1,0 +1,69 @@
+{
+  "$id": "https://example.com/swift_amount_1251.schema.json",
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "title": "SWIFT_TRANSFER",
+  "definitions": {
+    "rate": {
+      "type": "integer",
+      "exclusiveMinimum": 0
+    },
+    "amount": {
+      "$ref": "../amount.json#/properties/amount"
+    },
+    "target": {
+      "$ref": "../target.json#/properties/target"
+    },
+    "bankInfo": {
+      "$ref": "../bankInfo.json#/properties/bankInfo"
+    }
+  },
+  "type": "object",
+  "properties": {
+    "purpose": {
+      "type": "string",
+      "description": "The document type(SWIFT_TRANSFER)"
+    },
+    "beneficiary": {
+      "type": "string",
+      "description": "Beneficiary name of the document",
+      "comment": "e.g. Գազ և գազի սպասարկում"
+    },
+    "rate": {
+      "$ref": "#/definitions/rate"
+    },
+    "debitAmount": {
+      "$ref": "#/definitions/amount"
+    },
+    "debitTarget": {
+      "$ref": "#/definitions/target"
+    },
+    "creditAmount": {
+      "$ref": "#/definitions/amount"
+    },
+    "creditTarget": {
+      "$ref": "#/definitions/target"
+    },
+    "country": {
+      "type": "string"
+    },
+    "bankInfo": {
+      "$ref": "#/definitions/bankInfo"
+    },
+    "intermediaryBankInfo": {
+      "$ref": "#/definitions/bankInfo"
+    }
+  },
+  "required": [
+    "purpose",
+    "beneficiary",
+    "rate",
+    "debitTarget",
+    "debitAmount",
+    "creditAmount",
+    "creditTarget",
+    "country",
+    "bankInfo",
+    "intermediaryBankInfo"
+  ],
+  "additionalProperties": false
+}

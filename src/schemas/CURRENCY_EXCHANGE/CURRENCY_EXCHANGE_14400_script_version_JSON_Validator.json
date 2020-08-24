@@ -1,0 +1,52 @@
+{
+  "$id": "https://example.com/currency_exchange_14400.schema.json",
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "title": "CURRENCY_EXCHANGE",
+  "definitions": {
+    "amount": {
+      "$ref": "../amount.json#/properties/amount"
+    },
+    "target": {
+      "$ref": "../target.json#/properties/target"
+    }
+  },
+  "type": "object",
+  "properties": {
+    "purpose": {
+      "type": "string",
+      "description": "The document type(CURRENCY_EXCHANGE)"
+    },
+    "debitAmount": {
+      "$ref": "#/definitions/amount"
+    },
+    "debitTarget": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/target"
+        },
+        {
+          "properties": {
+            "targetType": {
+              "type": "string"
+            },
+            "accountNumber": {
+              "type": "string"
+            },
+            "displayCardNumber": {
+              "type": "string"
+            },
+            "contractNumber": {
+              "type": "string"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "required": [
+    "purpose",
+    "debitAmount",
+    "debitTarget"
+  ],
+  "additionalProperties": false
+}

@@ -1,0 +1,46 @@
+{
+  "$id": "https://example.com/deposit_replenishment_1551.schema.json",
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "title": "DEPOSIT_REPLENISHMENT",
+  "definitions": {
+    "amount": {
+      "$ref": "../amount.json#/properties/amount"
+    },
+    "target": {
+      "$ref": "../target.json#/properties/target"
+    }
+  },
+  "type": "object",
+  "properties": {
+    "purpose": {
+      "type": "string",
+      "description": "The document type(DEPOSIT_REPLENISHMENT)"
+    },
+    "beneficiary": {
+      "type": "string",
+      "description": "Beneficiary name of the document",
+      "comment": "e.g. Գազ և գազի սպասարկում"
+    },
+    "debitAmount": {
+      "$ref": "#/definitions/amount"
+    },
+    "debitTarget": {
+      "$ref": "#/definitions/target"
+    },
+    "creditAmount": {
+      "$ref": "#/definitions/amount"
+    },
+    "creditTarget": {
+      "$ref": "#/definitions/target"
+    }
+  },
+  "required": [
+    "purpose",
+    "beneficiary",
+    "debitAmount",
+    "debitTarget",
+    "creditAmount",
+    "creditTarget"
+  ],
+  "additionalProperties": false
+}

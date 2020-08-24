@@ -1,0 +1,15 @@
+{
+  "$id": "https://example.com/easy_transfer_7151.schema.json",
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "title": "EASY_TRANSFER",
+  "type": "object",
+  "properties": {
+    "feedback": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "feedback"
+  ],
+  "additionalProperties": false
+}
